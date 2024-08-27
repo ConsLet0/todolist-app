@@ -102,7 +102,7 @@ php artisan migrate:fresh --seed
 
 Jalankan website dengan perintah dibawah ini.
 ```sh
-php artisan serv.
+php artisan serv
 ```
 
 ## Data
