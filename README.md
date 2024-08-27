@@ -8,172 +8,121 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
-Dillinger is a cloud-enabled, mobile-ready, offline-storage compatible,
-AngularJS-powered HTML5 Markdown editor.
-
-- Type some Markdown on the left
-- See HTML in the right
-- ✨Magic ✨
-
+Todolist App adalah aplikasi website yang dibangun dengan 
+Laravel, HTML, CSS, dan JavaScript.
+.
 ## Features
 
-- Import a HTML file and watch it magically convert to Markdown
-- Drag and drop images (requires your Dropbox account be linked)
-- Import and save files from GitHub, Dropbox, Google Drive and One Drive
-- Drag and drop markdown and HTML files into Dillinger
-- Export documents as Markdown, HTML and PDF
+- Pengelolaan Tugas Berdasarkan Email: Setiap pengguna dapat memiliki to-do list yang terpisah sesuai dengan alamat email yang digunakan, memungkinkan pengaturan yang lebih terorganisir.
+- Fleksibilitas dalam Mengatur Kategori: Pengguna dapat menambah, mengedit, dan menghapus kategori dengan mudah, memberikan kebebasan dalam mengelola tugas.
+- Penjadwalan Tugas untuk Hari Berikutnya:** Aplikasi ini memungkinkan pengguna untuk menjadwalkan tugas untuk hari-hari mendatang, membantu Anda tetap teratur dan efisien.
 
-Markdown is a lightweight markup language based on the formatting conventions
-that people naturally use in email.
-As [John Gruber] writes on the [Markdown site][df1]
 
-> The overriding design goal for Markdown's
-> formatting syntax is to make it as readable
-> as possible. The idea is that a
-> Markdown-formatted document should be
-> publishable as-is, as plain text, without
-> looking like it's been marked up with tags
-> or formatting instructions.
 
-This text you see here is *actually- written in Markdown! To get a feel
-for Markdown's syntax, type some text into the left window and
-watch the results in the right.
+> Kebanyakan orang tidak mengatur waktu dengan baik. 
+> Dengan mengatur waktu dengan baik, Anda akan lebih produktif.
 
-## Tech
 
-Dillinger uses a number of open source projects to work properly:
 
-- [AngularJS] - HTML enhanced for web apps!
-- [Ace Editor] - awesome web-based text editor
-- [markdown-it] - Markdown parser done right. Fast and easy to extend.
-- [Twitter Bootstrap] - great UI boilerplate for modern web apps
-- [node.js] - evented I/O for the backend
-- [Express] - fast node.js network app framework [@tjholowaychuk]
-- [Gulp] - the streaming build system
-- [Breakdance](https://breakdance.github.io/breakdance/) - HTML
-to Markdown converter
-- [jQuery] - duh
+## Aplikasi tambahan
+
+Sebelum bisa menjalankan proyek ini wajib menginstall:
+
+- [Composer](https://getcomposer.org/download/) - untuk mengelola dependensi PHP.
+- [Node.js](https://nodejs.org/) - untuk menjalankan JavaScript di server.r
+- [XAMPP](https://www.apachefriends.org/index.html) - untuk menyediakan lingkungan server lokal yang diperlukan.
+- [VScode](https://code.visualstudio.com) - compiler atau text editor untuk mengubah kode didalamnya.
 
 And of course Dillinger itself is open source with a [public repository][dill]
  on GitHub.
 
 ## Installation
 
-Dillinger requires [Node.js](https://nodejs.org/) v10+ to run.
+Akses tautan ini melalui website [Github](https://github.com/ConsLet0/todolist-app) untuk mendapatkan kode lengkapnya.
 
-Install the dependencies and devDependencies and start the server.
+Silahkan duplikasi dengan menjalankan code ini di command prompt (sebelumnya pilih folder yang akan menyimpan kode ini).
 
 ```sh
-cd dillinger
-npm i
-node app
+git clone https://github.com/ConsLet0/todolist-app
 ```
 
-For production environments...
+Lalu buka dengan Visual Studio Code atau Text Editor lain.
+
+## Persiapan
+
+Setelah Visual Studio Code atau Text Editor terbuka.
+
+Buka Terminal pada Text Editor.
+Lalu ketikan
+```sh
+composer install
+```
+Jalankan xampp dengan menekan tombol start pada mysql dan apache.
+Klik Admin pada menu Mysql.
+
+Buat Database baru (nama dibebaskan).
+
+Copy paste
 
 ```sh
-npm install --production
-NODE_ENV=production node app
+.env.example
+```
+Pada folder kode yang sudah dibuka di text editor dan ganti namanya menjadi
+```sh
+.env
+```
+Buka .env dan silahkan ganti
+```sh
+DB_DATABASE=laravel
+```
+menjadi
+```sh
+DB_DATABASE=[nama database yang sudah dibuat tanpa kurung]
 ```
 
-## Plugins
-
-Dillinger is currently extended with the following plugins.
-Instructions on how to use them in your own application are linked below.
-
-| Plugin | README |
-| ------ | ------ |
-| Dropbox | [plugins/dropbox/README.md][PlDb] |
-| GitHub | [plugins/github/README.md][PlGh] |
-| Google Drive | [plugins/googledrive/README.md][PlGd] |
-| OneDrive | [plugins/onedrive/README.md][PlOd] |
-| Medium | [plugins/medium/README.md][PlMe] |
-| Google Analytics | [plugins/googleanalytics/README.md][PlGa] |
-
-## Development
-
-Want to contribute? Great!
-
-Dillinger uses Gulp + Webpack for fast developing.
-Make a change in your file and instantaneously see your updates!
-
-Open your favorite Terminal and run these commands.
-
-First Tab:
-
+Jalankan perintah dibawah ini untuk menginstall node modules.
 ```sh
-node app
+npm install
+npm run build
 ```
 
-Second Tab:
+## Menjalankan Aplikasi
+Jalankan perintah dibawah ini untuk membuat kunci unik pada aplikasi tersebut
 
 ```sh
-gulp watch
+php artisan key:generate
 ```
 
-(optional) Third:
-
+Setalah itu jalankan perintah ini untuk mengintegrasi struktur database dan menginput data yang sudah ditambahkan.
 ```sh
-karma test
+php artisan migrate:fresh --seed
 ```
 
-#### Building for source
-
-For production release:
-
+Jalankan website dengan perintah dibawah ini.
 ```sh
-gulp build --prod
+php artisan serv.
 ```
 
-Generating pre-built zip archives for distribution:
+## Data
 
+Dalam kode tersebut disediakan satu akun pengguna contoh yaitu admin
+dengan email dan password dibawah ini. Klik menu login pada bagian kanan
+atas layar lalu gunakan data dibawah ini.
 ```sh
-gulp build dist --prod
+admin@example.com
+admin123
 ```
 
-## Docker
-
-Dillinger is very easy to install and deploy in a Docker container.
-
-By default, the Docker will expose port 8080, so change this within the
-Dockerfile if necessary. When ready, simply use the Dockerfile to
-build the image.
-
+Akses pada tautan dibawah
 ```sh
-cd dillinger
-docker build -t <youruser>/dillinger:${package.json.version} .
-```
-
-This will create the dillinger image and pull in the necessary dependencies.
-Be sure to swap out `${package.json.version}` with the actual
-version of Dillinger.
-
-Once done, run the Docker image and map the port to whatever you wish on
-your host. In this example, we simply map port 8000 of the host to
-port 8080 of the Docker (or whatever port was exposed in the Dockerfile):
-
-```sh
-docker run -d -p 8000:8080 --restart=always --cap-add=SYS_ADMIN --name=dillinger <youruser>/dillinger:${package.json.version}
-```
-
-> Note: `--capt-add=SYS-ADMIN` is required for PDF rendering.
-
-Verify the deployment by navigating to your server address in
-your preferred browser.
-
-```sh
-127.0.0.1:8000
+http://127.0.0.1:8000
 ```
 
 ## License
-
 MIT
 
-**Free Software, Hell Yeah!**
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
